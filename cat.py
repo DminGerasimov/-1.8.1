@@ -7,7 +7,12 @@ class Cat:
         self.age = age
 
 
+    def set_age(self, age):
+        if age > 0 and isinstance(age, int):
+            self.age = age
+
+
     def init_from_dict(self, cat_dict):
         self.name = cat_dict.get("name")
         self.sex = cat_dict.get("sex")
-        self.age = cat_dict.get("age")
+        self.age = self.set_age(cat_dict.get("age"))
